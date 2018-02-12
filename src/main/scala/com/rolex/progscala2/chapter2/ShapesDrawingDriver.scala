@@ -1,6 +1,7 @@
 package com.rolex.progscala2.chapter2
 
 import akka.actor.{Actor, ActorRef, ActorSystem, Props}
+import com.rolex.progscala2.chapter2.Messages.{Exit, Finished, Response}
 import com.typesafe.config.ConfigFactory
 ;
 
@@ -20,8 +21,6 @@ object ShapesDrawingDriver {
 
 
 class ShapesDrawingDriver(drawerActor: ActorRef) extends Actor {
-
-  import Message._
 
   def receive = {
     case Start =>
